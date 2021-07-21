@@ -1,0 +1,35 @@
+extends layouts/default.pug
+
+include ../blocks/btn/btn.pug
+include ../blocks/burger/burger.pug
+include ../blocks/logo/logo.pug
+include ../blocks/main-nav/main-nav.pug
+
+append variables
+  - var page = 'index';
+
+block meta
+  title Repair Design Project
+  meta(name='description', content='')
+
+//- append head
+//-   link(rel='stylesheet', href='css/some.css')
+block svg-sprite
+  div(style='display: none;')
+    include ../blocks/sprite-svg/img/sprite.svg
+
+block header
+  +logo('/')
+    img(src='./img/demo-logo.svg', alt='Logo', width='64', height='15')
+
+block content
+  h1 Heading
+  p Main
+
+block footer
+  p footer
+
+//- prepend page-bottom
+//-   script(src='js/vendor.js')
+//- append page-bottom
+//-   script(src='js/index.js')

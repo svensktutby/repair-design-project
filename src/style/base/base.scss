@@ -1,0 +1,87 @@
+.page {
+  box-sizing: border-box;
+  min-width: 320px;
+  min-height: 100%;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer-wrapper {
+    flex-shrink: 0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex; // Fixing a bug in IE for min-height and flexbox (flex-direction:column)
+  flex-direction: column; // and pressing footer to bottom in IE 10-11
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+
+  font-size: $font-size;
+  line-height: $line-height;
+  font-family: $font-family;
+  text-align: left;
+  color: $text-color;
+  word-break: break-word;
+
+  background-color: $body-bg;
+}
+
+svg {
+  fill: currentColor;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $link-color;
+
+  background-color: transparent;
+
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: 0;
+  margin-bottom: $typo-margin-vertical;
+}
+
+blockquote {
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

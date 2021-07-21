@@ -1,0 +1,110 @@
+// В этом файле должны быть стили для БЭМ-блока tabs, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tabs {
+  $block-name: &; // #{$block-name}__element
+
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    &::after {
+      content: "";
+
+      display: none;
+      flex-grow: 1;
+      height: 1px;
+
+      background-color: $border-color;
+
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+
+    .no-js & {
+      display: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    margin: 0 0.3em 0.3em 0;
+
+    color: $text-color-muted;
+
+    border: 1px solid $border-color;
+
+    @media (min-width: $screen-md) {
+      margin: 0;
+
+      &:not(:last-child) {
+        border-right: 0;
+      }
+    }
+
+    &--active {
+      color: $text-color;
+
+      @media (min-width: $screen-md) {
+        border-bottom: 1px solid transparent;
+      }
+
+      #{$block-name}__link {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: $field-padding-vertical $field-padding-horizontal;
+
+    color: currentColor;
+    text-decoration: none;
+
+    background-color: $gray-lightest;
+
+    &:hover,
+    &:focus {
+      color: currentColor;
+    }
+  }
+
+  &__content-wrapper {
+    display: block;
+    padding: $field-padding-vertical $field-padding-horizontal;
+
+    border: 1px solid $border-color;
+
+    @media (min-width: $screen-md) {
+      border-top: 0;
+    }
+  }
+
+  &__content-item {
+    .js & {
+      display: none;
+    }
+
+    & > *:last-child { // stylelint-disable-line scss/selector-no-redundant-nesting-selector
+      margin-bottom: 0;
+    }
+
+    &--active {
+      .js & {
+        display: block;
+      }
+    }
+  }
+}

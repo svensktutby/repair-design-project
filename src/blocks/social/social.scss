@@ -1,0 +1,59 @@
+// В этом файле должны быть стили для БЭМ-блока social, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$socials: vk, in, ok, fb;
+$social-colors: (
+  "fb": #4267b2,
+  "tw": #40a2f5,
+  "gh": #24292e,
+  "in": #c33cbe,
+  "vk": #4a76a8,
+  "ok": #e27d23,
+);
+
+.social {
+  $block-name: &; // #{$block-name}__
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: $typo-margin-vertical;
+  margin-bottom: $typo-margin-vertical;
+  padding: 0;
+
+  list-style: none;
+
+  &__item {
+    margin-right: 10px;
+  }
+
+  &__link {
+    display: block;
+    padding: 5px;
+
+    background-color: $gray;
+
+    @each $item in $socials {
+      $color: map-get($social-colors, $item);
+
+      #{$block-name}__item--#{$item} & {
+        // @extend .icon-#{$item}; // stylelint-disable-line scss/at-extend-no-missing-placeholder
+
+        background-color: $color;
+      }
+    }
+
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      fill: #fff;
+    }
+  }
+
+  &__text {
+    @include visually-hidden;
+  }
+}

@@ -1,0 +1,54 @@
+include ../../blocks/page-footer/page-footer.pug
+include ../../blocks/page-header/page-header.pug
+
+block variables
+  - var isProd = process.env.NODE_ENV === 'production';
+
+doctype html
+html(class='page no-js', lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='shortcut icon', href='./img/favicon.ico')
+    if isProd
+      link(rel='apple-touch-icon', sizes='180x180', href='./img/apple-touch-icon-180x180.png')
+      link(rel='icon', type='image/png', sizes='32x32', href='./img/favicon-32x32.png')
+      link(rel='icon', type='image/png', sizes='16x16', href='./img/favicon-16x16.png')
+      link(rel='manifest', href='./img/manifest.json')
+      meta(name='msapplication-TileColor', content='#ffffff')
+
+    block meta
+      title Home
+
+    block head
+      if isProd
+        link(rel='stylesheet', href='./css/style.min.css')
+      else
+        link(rel='stylesheet', href='./css/style.css')
+      script
+        include ../../js/utils/head-script.js
+
+  body
+    noscript You have javascript disabled. Site interactivity will be unavailable.
+    block svg-sprite
+
+    .page__inner
+      .page__content
+        +page-header()
+          block header
+            p «Шапка»
+
+        block content
+          p содержимое
+
+      .page__footer-wrapper
+        +page-footer()
+          block footer
+            p «Подвал»
+
+    block page-bottom
+      if isProd
+        script(src=`./js/${page}.min.js`)
+      else
+        script(src=`./js/${page}.js`)

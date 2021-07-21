@@ -1,0 +1,50 @@
+{
+  "options": {
+    "appName": "My App",
+    "appShortName": "App",
+    "appDescription": "Started project",
+    "developerName": "Andrew Shved",
+    "developerURL": "https://svensktutby.github.io/",
+    "background": "transparent",
+    "path": "img/favicon/",
+    "url": "https://svensktutby.github.io/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/?homescreen=1",
+    "version": 1.0,
+    "logging": false,
+    "html": "index.html",
+    "pipeHTML": true,
+    "replace": true,
+    "icons": {
+      "appleIcon": true,
+      "favicons": true,
+      "android": true,
+      "online": false,
+      "appleStartup": false,
+      "firefox": false,
+      "yandex": false,
+      "windows": false,
+      "coast": false
+    },
+    "faviconsDev": [
+      "favicon.ico"
+    ],
+    "faviconsProd": [
+      "favicon.ico",
+      "favicon-16x16.png",
+      "favicon-32x32.png",
+      "apple-touch-icon-180x180.png",
+      "manifest.json",
+      "android-chrome-192x192.png"
+    ],
+    "androidChromeIcons": [
+      {
+        "src": "android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+}
