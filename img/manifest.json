@@ -1,0 +1,1 @@
+{"name":"My App","short_name":"App","description":"Started project","dir":"auto","lang":"en-US","display":"standalone","orientation":"portrait","scope":"/","start_url":"/?homescreen=1","background_color":"transparent","theme_color":"#fff","icons":[{"src":"android-chrome-192x192.png","sizes":"192x192","type":"image/png"}]}
