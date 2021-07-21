@@ -3,11 +3,12 @@
   min-width: 320px;
   min-height: 100%;
 
+  scroll-behavior: smooth;
+
   &__inner {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    @include container(xxl);
   }
 
   &__content {

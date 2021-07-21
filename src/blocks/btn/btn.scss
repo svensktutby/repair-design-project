@@ -48,13 +48,15 @@
     border-color: $white;
   }
 
-  // &:visited {
-  //   color: $text-color;
-  // }
+  &--light {
+    background-color: transparent;
+    border-color: $white;
 
-  &:active,
-  &:focus {
-    @include field-focus;
+    &:hover,
+    &:focus {
+      background-color: $link-color--hover;
+      border-color: $link-color--hover;
+    }
   }
 
   &--disabled,

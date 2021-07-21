@@ -1,0 +1,174 @@
+.promo {
+  background-color: $section-color-main;
+
+  &__inner {
+    @include container(xxl);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    min-height: 700px;
+    padding-left: 60px;
+
+    background-image: url("../img/promo-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 520px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    font-weight: 400;
+    font-size: $font-size-title-primary;
+    line-height: 3.3125rem;
+    font-family: "Yeseva One", sans-serif;
+    text-transform: uppercase;
+
+    span {
+      color: $color-gold;
+    }
+  }
+
+  &__description {
+    margin-bottom: 44px;
+
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+  }
+
+  &__cost-btn,
+  &__submit-btn {
+    min-width: 207px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
+  &__cost-btn {
+    margin-right: 15px;
+  }
+
+  &__insta {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: -80px;
+
+    display: flex;
+    align-items: center;
+    width: 80px;
+
+    background-color: $section-color-main;
+  }
+
+  &__insta-link {
+    display: inline-block;
+
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "FuturaDemiC", sans-serif;
+    text-align: center;
+    color: $color-gold;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transform: rotate(90deg);
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: -80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    height: 80px;
+
+    background-color: $section-color-main;
+  }
+
+  &__scroll-text {
+    margin-right: 12px;
+
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-family: "Yeseva One", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__scroll-link {
+    position: relative;
+
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+
+    text-decoration: none;
+
+    border: 2px solid $color-gold;
+    border-radius: 50%;
+
+    transition: border-color $transition-time;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 7px;
+
+      width: 10px;
+      height: 10px;
+
+      border-width: 2px;
+      border-style: solid;
+      border-top-color: $color-gold;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: $color-gold;
+      transform: rotate(-135deg);
+
+      transition: border-top-color $transition-time, border-left-color $transition-time;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $link-color;
+
+      &::after {
+        border-top-color: $link-color;
+        border-left-color: $link-color;
+      }
+    }
+  }
+}

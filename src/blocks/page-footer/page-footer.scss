@@ -6,7 +6,6 @@
   background-color: $section-color-main;
 
   &__inner {
-    padding-right: 100px;
-    padding-left: 100px;
+    @include container(xxl);
   }
 }
