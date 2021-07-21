@@ -17,21 +17,23 @@ $color-success:               hsl(120, 39%, 54%);
 $color-danger:                hsl(2, 64%, 58%);
 $color-warning:               hsl(35, 84%, 62%);
 
+$color-gold:                  #e3b873;
+
 $cloudy-knoxville-gradient:   linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
 /* Semantic colors
 ******************************/
-$text-color:                  $gray-darkest;
+$text-color:                  $white;
 $text-color-muted:            $gray;
 
-$body-bg:                     $white;
+$body-bg:                     #252525;
 $body-gradient:               $cloudy-knoxville-gradient;
 
-$section-color-main:          $white;
-$section-color-additional:    $gray-lightest;
+$section-color-main:          #131313;
+$section-color-additional:    $white;
 
-$link-color:                  $color-main;
-$link-color--hover:           darken($color-main, 15%);
+$link-color:                  $white;
+$link-color--hover:           $color-gold;
 $link-color-active:           $gray-lighten;
 
 $border-color:                $gray-lighten;
@@ -39,12 +41,13 @@ $border-color:                $gray-lighten;
 /* Fonts
 ******************************/
 $font-family:                 "FuturaBookC", "Arial", sans-serif;
-$font-size:                   16px;
-$font-size-sm:                0.75em; // 12px from 16px
+$font-size:                   1.125rem; // 18px from 16px
+$font-size-sm:                0.9375rem; // 15px from 16px
+$font-size-md:                1.25rem; // 20px from 16px
 
-$font-size-title-primary:     4.25rem;
-$font-size-title-secondary:   2.5rem;
-$font-size-title-tertiary:    1.75rem;
+$font-size-title-primary:     2.5rem;
+$font-size-title-secondary:   1.25rem;
+$font-size-title-tertiary:    1.6875rem;
 $font-size-title-quaternary:  1.125rem;
 
 $line-height:                 1.42;
@@ -57,8 +60,8 @@ $screen-xs:                   375px;
 $screen-sm:                   576px;
 $screen-md:                   768px;
 $screen-lg:                   992px;
-$screen-xl:                   1200px;
-$screen-xxl:                  1800px;
+$screen-xl:                   1336px;
+$screen-xxl:                  1640px;
 
 $container-xs:                100%;
 $container-sm:                100%;
@@ -81,20 +84,20 @@ $container-indent-sm:         $grid-gutter-width-sm / 2;
 $container-indent-md:         $grid-gutter-width / 2;
 $container-indent-lg:         $grid-gutter-width / 2;
 $container-indent-xl:         $grid-gutter-width / 2;
-$container-indent-xxl:        $grid-gutter-width / 2;
+$container-indent-xxl:        0;
 
 /* Other
 ******************************/
 $field-padding-vertical:      5px;
 $field-padding-horizontal:    12px;
 
-$border-radius:               3px;
+$border-radius:               2px;
 $opacity:                     0.7;
 $transition-time:             0.3s;
-$shadow:                      0 4px 2px -2px rgba(0, 0, 0, 0.3);
+$shadow:                      0px 5px 15px rgba(227, 184, 115, 0.2);
 
 $menu-desktop-width:          $screen-lg;
 $toggler-part-height:         3px;
-$toggler-part-bg-color:       #000;
+$toggler-part-bg-color:       $color-gold;
 
 $z-index-modal:               100;

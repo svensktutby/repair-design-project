@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (nav-block)
+
+mixin nav-block(mods)
+
+  //- Принимает:
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+        +nav-block()
+  -
+  // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' nav-block--' + modsList[i].trim();
+      }
+    }
+
+  div.nav-block(class=allMods)&attributes(attributes)
+    +logo('/')
+      | IC "Repair Design Project"
+    +main-nav('0', false)
+    a.nav-block__phone(href='tel:+79287683239')
+      | +7 (928) 768-32-39
+    +btn('Request a call').nav-block__call-request
+      block

@@ -4,41 +4,48 @@
 
 .btn {
   $block-name: &; // #{$block-name}__element
-  
+
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 0;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  padding: 10px 20px;
   overflow: hidden;
 
-  font-size: 1em;
-  line-height: $line-height;
-  font-family: inherit;
+  font-size: 0.8125rem;
+  line-height: 0.9375rem;
+  font-family: "FuturaDemiC", sans-serif;
   vertical-align: middle;
   text-align: center;
   color: $text-color;
-  text-transform: none;
+  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  background-color: $gray-lightest;
+  background-color: $link-color--hover;
   background-image: none;
-  // border: 1px solid $gray-lighter;
-  border: 0;
+  border: 1px solid $link-color--hover;
   border-radius: $border-radius;
+  box-shadow: $shadow;
   cursor: pointer;
 
+  transition-duration: $transition-time;
+  transition-property: color, background-color, border-color;
+
   user-select: none;
+
+  &:focus {
+    outline: none;
+  }
 
   &:hover,
   &:focus {
     color: $text-color;
     text-decoration: none;
 
-    background-color: darken($gray-lightest, 10%);
-    // border-color: darken($gray-lighter, 12%);
+    background-color: transparent;
+    border-color: $white;
   }
 
   // &:visited {
@@ -55,9 +62,9 @@
     color: $text-color;
 
     background-color: $gray-lightest;
+    border-color: $gray-lightest;
     cursor: not-allowed;
     opacity: $opacity;
-    // border-color: $gray-lighter;
 
     @at-root a.btn--disabled {
       pointer-events: none;

@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока nav-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.nav-block {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  &__phone {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "FuturaDemiC", sans-serif;
+    text-align: right;
+    color: $link-color--hover;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    transition: color $transition-time;
+
+    text-decoration-line: underline;
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+    }
+  }
+
+  &__call-request {
+    min-width: 160px;
+  }
+}

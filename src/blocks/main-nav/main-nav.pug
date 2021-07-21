@@ -1,18 +1,20 @@
 //- Все примеси в этом файле должны начинаться c имени блока (main-nav)
 //- Структура меню — в main-nav.data.pug
 
-mixin main-nav(selectedID)
+mixin main-nav(selectedID, isShowBurger)
 
   //- Принимает:
   //-   selectedID {string} - id пункта меню (по умолчанию — из main-nav.data.pug)
+  //-   isShowBurger {boolean} - отображение бургера
   //- Вызов:
-        +main-nav('1')
+        +main-nav('1', true)
 
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
   nav.main-nav#nav&attributes(attributes)
-    +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
+    if(isShowBurger)
+      +burger('Show the main menu', 'burger', 'main-nav--open')(class='main-nav__toggler')
     ul.main-nav__list
       each menuItem in mainMenu
         +main-nav-item(selectedID, menuItem, 1)

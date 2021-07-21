@@ -62,7 +62,7 @@
     &--active {
       // stylelint-disable
       & > #{$block-name}__link {
-        color: #000;
+        color: $link-color--hover;
       }
       // stylelint-enable
     }
@@ -72,15 +72,25 @@
     display: block;
     padding: 0.5em 1em;
 
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-family: "FuturaBookC", sans-serif;
+    text-transform: uppercase;
     text-decoration: none;
+    white-space: nowrap;
 
-    background-color: #fff;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
 
     &:hover,
     &:focus {
       text-decoration: none;
 
-      background-color: $gray-lightest;
+      background-color: transparent;
     }
 
     &--lvl-2 {

@@ -2,4 +2,11 @@
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-// .page-header {}
+.page-header {
+  background-color: $section-color-main;
+
+  &__inner {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
