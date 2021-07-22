@@ -1,0 +1,52 @@
+// В этом файле должны быть стили для БЭМ-блока controls, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.controls {
+  display: flex;
+  align-items: center;
+
+  &__arrow,
+  &__circle {
+    display: inline-block;
+    padding: 0;
+
+    vertical-align: middle;
+
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    line-height: 0;
+
+    background-color: transparent;
+
+    &--left {
+      margin-right: 20px;
+    }
+
+    &--right {
+      margin-left: 20px;
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &__circle {
+    width: 10px;
+    height: 10px;
+    margin-right: 9px;
+    margin-left: 9px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    &--active {
+      background-color: rgb(255, 255, 255);
+      cursor: default;
+    }
+  }
+}

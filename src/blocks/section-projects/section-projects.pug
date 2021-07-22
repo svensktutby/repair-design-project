@@ -1,0 +1,61 @@
+include ../controls/controls.pug
+include ../slider/slider.pug
+
+-
+  var descriptions = [
+    {
+      title: 'City:',
+      text: 'Rostov-on-Don LCD admiral',
+    },
+    {
+      title: 'Apartment Area:',
+      text: '81 m2',
+    },
+    {
+      title: 'Repair time:',
+      text: '3.5 months',
+    },
+    {
+      title: 'Repair Cost:',
+      text: 'Upon request',
+    },
+  ];
+
+  var imageList = [
+    {
+      name: 'Rostov-on-Don LCD admiral',
+      url: './img/completed-projects-01.jpg',
+    },
+    {
+      name: 'Sochi Thieves',
+      url: './img/completed-projects-02.jpg',
+    }
+  ];
+
+section.projects
+  div.projects__inner
+    div.projects__content
+      h2.projects__title
+        | Completed projects
+      p.projects__subtitle
+        | Only a small part of the work performed by our company is presented on the site. For 14 years on in the construction market we have made happy more than 1000 families
+      div.projects__description
+        ul.projects__description-list
+          each item in descriptions
+            li.projects__description-item
+              h3= item.title
+              p= item.text
+        +controls(3)
+    nav.projects__nav
+      ul.projects__nav-list
+        li.projects__nav-item
+          a.projects__nav-link.projects__nav-link--active(href="#")
+            | Rostov-on-Don, Admiral
+        li.projects__nav-item
+          a.projects__nav-link(href="#")
+            | Sochi Thieves
+        li.projects__nav-item
+          a.projects__nav-link(href="#")
+            | Rostov-on-Don Patriotic
+      div.projects__slider
+        +slider(imageList)

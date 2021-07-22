@@ -12,7 +12,7 @@ mixin main-nav(selectedID, isShowBurger)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
-  nav.main-nav#nav&attributes(attributes)
+  nav.main-nav&attributes(attributes)
     if(isShowBurger)
       +burger('Show the main menu', 'burger', 'main-nav--open')(class='main-nav__toggler')
     ul.main-nav__list

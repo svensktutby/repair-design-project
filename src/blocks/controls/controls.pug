@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (controls)
+
+mixin controls(length, mods)
+
+  //- Принимает:
+  //-   length  {number} - количество элементов
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+        +controls(3)
+  -
+    // список модификаторов
+      var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          allMods = allMods + ' nav-block--' + modsList[i].trim();
+        }
+      }
+
+  div.controls(class=allMods)&attributes(attributes)
+    button.controls__arrow.controls__arrow--left
+      svg(width="42px", height="13px" aria-hidden="true" role="presentation")
+        use(xlink:href="#arrow-left")
+      span.visually-hidden Previous
+    - for (var i = 0; i < length; i++)
+      - var className = (i === 0 ? 'controls__circle controls__circle--active' : 'controls__circle')
+      button(class=className)
+        span.visually-hidden Toggle item
+    button.controls__arrow.controls__arrow--right
+      svg(width="42px", height="13px" aria-hidden="true" role="presentation")
+        use(xlink:href="#arrow-right")
+      span.visually-hidden Next

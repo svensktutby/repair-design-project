@@ -1,25 +1,26 @@
 //- Все примеси в этом файле должны начинаться c имени блока (nav-block)
 
-mixin nav-block(mods)
+mixin nav-block(targetId, mods)
 
   //- Принимает:
+  //-   targetId  {string} - атрибут id main-nav (без символа #)
   //-   mods  {string} - список модификаторов
   //- Вызов:
-        +nav-block()
+        +nav-block('nav-top')
   -
-  // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' nav-block--' + modsList[i].trim();
+    // список модификаторов
+      var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          allMods = allMods + ' nav-block--' + modsList[i].trim();
+        }
       }
-    }
 
   div.nav-block(class=allMods)&attributes(attributes)
     +logo('/')
       | IC "Repair Design Project"
-    +main-nav('0', false)
+    +main-nav('0', false)(id=`${targetId}`)
     a.nav-block__phone(href='tel:+79287683239')
       | +7 (928) 768-32-39
     +btn('Request a call')(href='#').nav-block__call-request

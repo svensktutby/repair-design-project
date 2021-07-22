@@ -1,0 +1,84 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+
+  width: 950px;
+  height: 480px;
+
+  &__list {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+    padding-left: 0;
+    overflow: hidden;
+
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-left: 20px;
+  }
+
+  &__image {
+    max-width: initial;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+
+    text-decoration: none;
+
+    background-color: $color-gold;
+    border: 0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    transition: background-color $transition-time;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: 16px;
+
+      width: 16px;
+      height: 16px;
+
+      border-width: 3px;
+      border-style: solid;
+      border-top-color: $white;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: $white;
+      transform: rotate(135deg);
+
+      transition: border-top-color $transition-time, border-left-color $transition-time;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $link-color;
+
+      &::after {
+        border-top-color: $link-color--hover;
+        border-left-color: $link-color--hover;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider)
+
+mixin slider(imageList, mods)
+
+  //- Принимает:
+  //-   imageList  {Array} - массив изображений
+  //-   mods  {string} - список модификаторов
+  //- Вызов:
+        +slider([])
+  -
+    // список модификаторов
+      var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          allMods = allMods + ' nav-block--' + modsList[i].trim();
+        }
+      }
+
+  div.slider(class=allMods)&attributes(attributes)
+    ul.slider__list
+      each item in imageList
+        li.slider__item
+          img.slider__image(src=`${item.url}` alt=`${item.name}`)
+    button.slider__btn.slider__btn--next
+      span.visually-hidden Next image
