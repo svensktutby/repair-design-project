@@ -60,15 +60,15 @@ $screen-xs:                   375px;
 $screen-sm:                   576px;
 $screen-md:                   768px;
 $screen-lg:                   992px;
-$screen-xl:                   1336px;
-$screen-xxl:                  1640px;
+$screen-xl:                   1200px;
+$screen-xxl:                  1440px;
 
 $container-xs:                100%;
 $container-sm:                100%;
 $container-md:                100%;
 $container-lg:                $screen-lg - 100;
-$container-xl:                $screen-xl - 100;
-$container-xxl:               $screen-xxl - 200;
+$container-xl:                $screen-xl;
+$container-xxl:               $screen-xxl;
 
 $retina-dpi:                  144dpi;
 $retina-dppx:                 1.5dppx;
@@ -77,14 +77,14 @@ $retina-dppx:                 1.5dppx;
 ******************************/
 $grid-columns:                12;
 $grid-gutter-width:           30px;
-$grid-gutter-width-sm:        10px;
+$grid-gutter-width-sm:        20px;
 
 $container-indent-xs:         $grid-gutter-width-sm / 2;
 $container-indent-sm:         $grid-gutter-width-sm / 2;
-$container-indent-md:         $grid-gutter-width / 2;
-$container-indent-lg:         $grid-gutter-width / 2;
-$container-indent-xl:         $grid-gutter-width / 2;
-$container-indent-xxl:        0;
+$container-indent-md:         15px;
+$container-indent-lg:         30px;
+$container-indent-xl:         60px;
+$container-indent-xxl:        80px;
 
 /* Other
 ******************************/

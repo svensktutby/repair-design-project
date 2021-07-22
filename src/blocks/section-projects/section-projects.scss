@@ -6,6 +6,7 @@
   min-height: 300px;
   padding-top: 100px;
   padding-bottom: 200px;
+  overflow: hidden;
 
   background-color: $section-color-main;
   background-image: url("../img/bg-line.png");
@@ -36,6 +37,17 @@
     z-index: 1;
 
     display: flex;
+    padding-right: 0;
+
+    @media screen and (max-width: $screen-xl) {
+      @include container(xl);
+
+      padding-right: 0;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      @include container(md);
+    }
   }
 
   &__content {

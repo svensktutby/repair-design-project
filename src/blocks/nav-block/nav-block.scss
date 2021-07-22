@@ -29,9 +29,24 @@
     &:focus {
       color: $link-color;
     }
+
+    @media screen and (max-width: $screen-md) {
+      color: $link-color;
+
+      text-decoration-line: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: $link-color--hover;
+    }
   }
 
   &__call-request {
     min-width: 160px;
+
+    @media screen and (max-width: $screen-xl) {
+      display: none;
+    }
   }
 }

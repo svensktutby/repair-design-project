@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     min-height: 707px;
-    padding-left: 60px;
+    padding-left: 120px;
 
     background-image: url("../img/promo-bg.jpg");
     background-repeat: no-repeat;
@@ -26,6 +26,24 @@
       left: 0;
 
       background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    @media screen and (max-width: $screen-xl) {
+      @include container(xl);
+
+      padding-left: 100px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      @include container(md);
+
+      min-height: 476px;
     }
   }
 
@@ -49,6 +67,12 @@
     span {
       color: $color-gold;
     }
+
+    @media screen and (max-width: $screen-md) {
+      max-width: 340px;
+      font-size: 1.4375rem;
+      line-height: 2rem;
+    }
   }
 
   &__lead {
@@ -56,6 +80,22 @@
 
     font-size: 1.375rem;
     line-height: 1.875rem;
+
+    @media screen and (max-width: $screen-md) {
+      margin-bottom: 30px;
+      font-size: $font-size;
+    }
+  }
+
+  &__btn-wrapper {
+    @media screen and (max-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      display: block;
+    }
   }
 
   &__cost-btn,
@@ -63,10 +103,38 @@
     min-width: 207px;
     padding-top: 17px;
     padding-bottom: 17px;
+
+    @media screen and (max-width: $screen-lg) {
+      flex-basis: 48%;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      display: block;
+      border-radius: 0;
+    }
   }
 
   &__cost-btn {
     margin-right: 15px;
+
+    @media screen and (max-width: $screen-lg) {
+      margin-right: 5px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      margin-right: 0;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__submit-btn {
+    @media screen and (max-width: $screen-lg) {
+      margin-left: 5px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      margin-left: 0;
+    }
   }
 
   &__insta {
@@ -74,13 +142,22 @@
     z-index: 2;
     top: 0;
     bottom: 0;
-    left: -80px;
+    left: 0;
 
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 80px;
 
     background-color: $section-color-main;
+
+    @media screen and (max-width: $screen-xl) {
+      width: 60px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      display: none;
+    }
   }
 
   &__insta-link {
@@ -107,7 +184,7 @@
     position: absolute;
     z-index: 2;
     bottom: -40px;
-    left: -80px;
+    left: 0;
 
     display: flex;
     align-items: center;
@@ -116,6 +193,16 @@
     height: 80px;
 
     background-color: $section-color-main;
+
+    @media screen and (max-width: $screen-xl) {
+      bottom: -30px;
+
+      height: 60px;
+    }
+
+    @media screen and (max-width: $screen-lg) {
+      display: none;
+    }
   }
 
   &__scroll-text {

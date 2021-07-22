@@ -7,5 +7,13 @@
 
   &__inner {
     @include container(xxl);
+
+    @media screen and (max-width: $screen-xl) {
+      @include container(xl);
+    }
+
+    @media screen and (max-width: $screen-md) {
+      @include container(md);
+    }
   }
 }
