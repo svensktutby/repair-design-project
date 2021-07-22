@@ -10,6 +10,12 @@
   width: 950px;
   height: 480px;
 
+  @media screen and (max-width: $screen-xxl) {
+    width: 100%;
+    max-width: 679px;
+    height: auto;
+  }
+
   &__list {
     position: relative;
     top: 0;
@@ -25,17 +31,30 @@
   }
 
   &__item {
-    margin-left: 20px;
+    margin-right: 20px;
+
+    @media screen and (max-width: $screen-xl) {
+      margin-right: 0;
+    }
+
+    &:not(:first-of-type) {
+      @media screen and (max-width: $screen-lg) {
+        display: none;
+      }
+    }
   }
 
   &__image {
     max-width: initial;
+
+    @media screen and (max-width: $screen-lg) {
+      max-width: 100%;
+    }
   }
 
   &__btn {
     position: absolute;
     top: 50%;
-    right: 100px;
 
     display: inline-block;
     width: 54px;
@@ -51,11 +70,15 @@
 
     transition: background-color $transition-time;
 
+    @media screen and (max-width: $screen-md) {
+      width: 36px;
+      height: 36px;
+    }
+
     &::after {
       content: "";
       position: absolute;
       top: 19px;
-      left: 16px;
 
       width: 16px;
       height: 16px;
@@ -66,9 +89,17 @@
       border-right-color: transparent;
       border-bottom-color: transparent;
       border-left-color: $white;
-      transform: rotate(135deg);
 
       transition: border-top-color $transition-time, border-left-color $transition-time;
+
+      @media screen and (max-width: $screen-md) {
+        top: 12px;
+
+        width: 12px;
+        height: 12px;
+
+        border-width: 2px;
+      }
     }
 
     &:hover,
@@ -78,6 +109,40 @@
       &::after {
         border-top-color: $link-color--hover;
         border-left-color: $link-color--hover;
+      }
+    }
+
+    &--previous {
+      left: 6%;
+
+      display: none;
+
+      &::after {
+        left: 22px;
+
+        transform: rotate(315deg);
+
+        @media screen and (max-width: $screen-md) {
+          left: 15px;
+        }
+      }
+
+      @media screen and (max-width: $screen-xxl) {
+        display: inline-block;
+      }
+    }
+
+    &--next {
+      right: 6%;
+
+      &::after {
+        left: 16px;
+
+        transform: rotate(135deg);
+
+        @media screen and (max-width: $screen-md) {
+          left: 10px;
+        }
       }
     }
   }

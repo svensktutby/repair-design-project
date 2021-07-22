@@ -6,6 +6,10 @@
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: $screen-xl) {
+    display: none;
+  }
+
   &__arrow,
   &__circle {
     display: inline-block;

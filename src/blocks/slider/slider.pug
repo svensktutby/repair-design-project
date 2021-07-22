@@ -22,5 +22,7 @@ mixin slider(imageList, mods)
       each item in imageList
         li.slider__item
           img.slider__image(src=`${item.url}` alt=`${item.name}`)
+    button.slider__btn.slider__btn--previous
+      span.visually-hidden Previous image
     button.slider__btn.slider__btn--next
       span.visually-hidden Next image

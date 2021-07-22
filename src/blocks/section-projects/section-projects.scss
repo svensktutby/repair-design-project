@@ -14,6 +14,16 @@
   background-position: left top;
   background-size: cover;
 
+  @media screen and (max-width: $screen-xl) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -42,6 +52,9 @@
     @media screen and (max-width: $screen-xl) {
       @include container(xl);
 
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding-right: 0;
     }
 
@@ -54,6 +67,11 @@
     max-width: 442px;
     margin-right: 50px;
     padding-top: 80px;
+
+    @media screen and (max-width: $screen-xl) {
+      margin-right: 0;
+      padding-top: 0;
+    }
   }
 
   &__title {
@@ -69,6 +87,13 @@
     text-transform: uppercase;
     letter-spacing: -0.07em;
 
+    @media screen and (max-width: $screen-xl) {
+      margin-right: auto;
+      margin-left: auto;
+
+      text-align: center;
+    }
+
     &::after {
       content: "";
 
@@ -80,6 +105,10 @@
       vertical-align: middle;
 
       background-color: $color-gold;
+
+      @media screen and (max-width: $screen-xl) {
+        display: none;
+      }
     }
   }
 
@@ -88,6 +117,10 @@
     margin-bottom: 46px;
 
     line-height: 1.8125rem;
+
+    @media screen and (max-width: $screen-xl) {
+      text-align: center;
+    }
   }
 
   &__description-list {
@@ -127,11 +160,14 @@
     padding-left: 0;
 
     list-style-type: none;
+
+    @media screen and (max-width: $screen-xl) {
+      display: none;
+    }
   }
 
   &__nav-item {
-    &:not(:first-of-type),
-    &:not(:last-of-type) {
+    &:not(:first-of-type) {
       margin-right: 20px;
       margin-left: 20px;
     }
